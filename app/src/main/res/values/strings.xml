@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">DataStoreExample</string>
+    <string name="veg">Veg</string>
+    <string name="non_veg">Non Veg</string>
+    <string name="sweet">Sweet</string>
+    <string name="spicy">Spicy</string>
+    <string name="taste">Taste</string>
+    <string name="type">Type</string>
+    <string name="preference_datastore_example">Preference DataStore Example</string>
+    <string name="proto_datastore_preference">Proto Datastore Preference</string>
 </resources>

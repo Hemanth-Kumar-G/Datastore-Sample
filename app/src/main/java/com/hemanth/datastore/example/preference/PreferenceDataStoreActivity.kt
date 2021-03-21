@@ -13,16 +13,18 @@ import kotlinx.coroutines.launch
 class PreferenceDataStoreActivity : AppCompatActivity() {
 
     private lateinit var settingsManager: SettingsManager
-    private lateinit var mBinding: ActivityPreferenceDataStoreBinding
+
+    private val mBinding: ActivityPreferenceDataStoreBinding by lazy {
+        ActivityPreferenceDataStoreBinding.inflate(layoutInflater)
+    }
+
     private var isDarkMode = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        mBinding = ActivityPreferenceDataStoreBinding.inflate(layoutInflater)
         setContentView(mBinding.root)
         settingsManager = SettingsManager(context = applicationContext)
         observeUiPreferences()
-//        mBinding.
     }
 
     private fun observeUiPreferences() {

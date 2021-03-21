@@ -4,6 +4,96 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="?attr/colorSecondary"
     tools:context=".proto.ProtoDataStoreActivity">
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/cgFoodType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/cgFoodTaste"
+        app:singleSelection="true">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/veg"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checkable="true"
+            android:text="@string/veg" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/nonVeg"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checkable="true"
+            android:text="@string/non_veg" />
+    </com.google.android.material.chip.ChipGroup>
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/cgFoodTaste"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/cgFoodType"
+        app:layout_constraintStart_toStartOf="parent"
+        app:singleSelection="true">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/sweet"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checkable="true"
+            android:text="@string/sweet" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/spicy"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checkable="true"
+            android:text="@string/spicy" />
+    </com.google.android.material.chip.ChipGroup>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvTaste"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/taste"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/cgFoodTaste"
+        app:layout_constraintEnd_toEndOf="@id/cgFoodTaste"
+        app:layout_constraintStart_toStartOf="@id/cgFoodTaste" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/type"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/cgFoodType"
+        app:layout_constraintEnd_toEndOf="@id/cgFoodType"
+        app:layout_constraintStart_toStartOf="@id/cgFoodType" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="5dp"
+        android:background="@android:color/background_light"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toTopOf="@+id/tvTaste"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:listitem="@layout/item_food" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

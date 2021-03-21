@@ -4,15 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PreferenceDatatoreActivity">
+    tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/buttonPreference"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:text="@string/preference_datastore_example"
+        app:layout_constraintBottom_toTopOf="@+id/buttonProto"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <Button
+        android:id="@+id/buttonProto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/proto_datastore_preference"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonPreference" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
